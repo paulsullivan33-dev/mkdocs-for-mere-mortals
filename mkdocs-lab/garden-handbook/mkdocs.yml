@@ -1,0 +1,56 @@
+site_name: Maple Street Community Garden Handbook
+site_description: The members handbook for a fictional community garden. Getting a plot, looking after it, compost, the tool shed, and how the garden is run.
+site_url: https://example.org/garden-handbook/
+docs_dir: docs
+site_dir: site
+
+theme:
+  name: material
+  palette:
+    # Light mode, with a toggle to dark
+    - scheme: default
+      primary: green
+      accent: lime
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    # Dark mode, with a toggle back
+    - scheme: slate
+      primary: green
+      accent: lime
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.sections
+    - navigation.top
+    - content.code.copy
+    - search.suggest
+
+extra_css:
+  - stylesheets/extra.css
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+plugins:
+  - search
+  - minify:
+      minify_html: true
+
+nav:
+  - Home: index.md
+  - Getting a Plot: getting-a-plot.md
+  - Looking After Your Plot: plot-care.md
+  - Compost: compost.md
+  - The Tool Shed: tool-shed.md
+  - Meetings and Jobs: meetings-and-jobs.md

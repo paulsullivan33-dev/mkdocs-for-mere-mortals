@@ -1,0 +1,4 @@
+HTML bytes, same site built with and without the minify plugin:
+$ find <site> -name '*.html' -exec cat {} + | wc -c
+without minify: 120313
+with minify:    95242

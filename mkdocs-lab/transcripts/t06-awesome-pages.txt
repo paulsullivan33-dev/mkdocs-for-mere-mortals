@@ -1,0 +1,8 @@
+$ (nav removed from mkdocs.yml; order given by docs/.pages instead)
+$ mkdocs build --strict
+INFO    -  Cleaning site directory
+INFO    -  Building documentation to directory: /home/hatch/workspace/mkdocs-scratch-ap/site
+INFO    -  Documentation built in 3.54 seconds
+build exit: 0
+$ grep -o "Getting a Plot" site/index.html | head -1
+Getting a Plot

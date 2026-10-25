@@ -1,0 +1,15 @@
+$ mkdocs --version
+mkdocs, version 1.6.1 from /home/hatch/workspace/mkdocs-venv/lib/python3.12/site-packages/mkdocs (Python 3.12)
+
+$ pip show mkdocs-material mkdocs-minify-plugin
+Name: mkdocs-material
+Version: 9.7.7
+Summary: Documentation that simply works
+Name: mkdocs-minify-plugin
+Version: 0.8.0
+Summary: An MkDocs plugin to minify HTML, JS or CSS files prior to being written to disk
+
+$ pip show mkdocs-awesome-pages-plugin
+Name: mkdocs-awesome-pages-plugin
+Version: 2.10.1
+Summary: An MkDocs plugin that simplifies configuring page titles and their order

@@ -1,0 +1,51 @@
+MkDocs for Mere Mortals — lab-notes.txt
+What the lab actually was, and what it proved.
+
+Environment
+  Ubuntu 24.04 sandbox, Python 3.12.3.
+  Virtual environment: ~/workspace/mkdocs-venv
+  (kept under the workspace, never system-wide).
+
+Versions (transcript t00)
+  mkdocs                        1.6.1
+  mkdocs-material               9.7.7
+  mkdocs-minify-plugin          0.8.0
+  mkdocs-awesome-pages-plugin  2.10.1
+
+Sample project
+  mkdocs-lab/garden-handbook/ — the Maple Street
+  Community Garden Handbook, a fictional club
+  handbook: six pages, the Material theme with a
+  light/dark palette pair, four feature switches,
+  seven Markdown extensions, the search and
+  minify plugins, one small extra stylesheet.
+  Its built site/ folder is generated output and
+  is not committed; rebuild it with chapter 4's
+  commands.
+
+What the transcripts show (mkdocs-lab/transcripts/)
+  t00  versions, as above
+  t01  mkdocs new — the two-file scaffold
+  t02  strict build, exit 0; output inspected for
+       palette, search index, code copy, highlight
+       markup, admonition/tab/task-list classes
+  t03  serve over HTTP: 302 to the site_url path,
+       pages 200, search index served as JSON
+  t04  broken link: warning + exit 0 plain,
+       abort + exit 1 strict
+  t05  minify: 120,313 -> 95,242 HTML bytes
+  t06  awesome-pages: nav removed, .pages order
+       in force, strict build clean
+
+Not run from the sandbox
+  mkdocs gh-deploy (present in 1.6.1; no real
+  repository was used). The Actions workflow is
+  described generically in chapter 11. This
+  guide's own strict build was run staged
+  exactly as that workflow stages it.
+
+Quirk worth knowing
+  Material 9.7.7 prints a banner about an
+  announced "MkDocs 2.0" on every build. It is
+  the theme project's advocacy text, not a
+  warning; strict builds exit 0 with it shown.

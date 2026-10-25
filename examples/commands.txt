@@ -1,0 +1,34 @@
+MkDocs for Mere Mortals — commands.txt
+The commands the guide is built around, in order.
+Verified against MkDocs 1.6.1 (see lab-notes.txt).
+
+== Install (chapter 3) ==
+
+python3 -m venv ~/mkdocs-venv
+source ~/mkdocs-venv/bin/activate
+pip install mkdocs mkdocs-material
+mkdocs --version
+
+== First site (chapter 4) ==
+
+mkdocs new garden-handbook
+cd garden-handbook
+mkdocs serve              # preview at http://127.0.0.1:8000
+                          # (plus the site_url path, if set)
+mkdocs build --strict     # the only build worth trusting
+
+== Plugins (chapters 7 and 10) ==
+
+pip install mkdocs-minify-plugin
+pip install mkdocs-awesome-pages-plugin
+
+== The proof (chapter 15) ==
+
+mkdocs build --strict && echo BUILD-OK
+ls site/index.html site/search/search_index.json
+
+== Publish (chapter 11) ==
+
+mkdocs gh-deploy          # short way: gh-pages branch
+# steady way: the workflow in .github/workflows/deploy-docs.yml
+# (install, stage, mkdocs build --strict, upload, deploy)

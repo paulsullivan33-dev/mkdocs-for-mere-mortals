@@ -1,0 +1,4 @@
+$ mkdocs new garden-handbook
+INFO    -  Creating project directory: garden-handbook
+INFO    -  Writing config file: garden-handbook/mkdocs.yml
+INFO    -  Writing initial docs: garden-handbook/docs/index.md

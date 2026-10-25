@@ -1,0 +1,20 @@
+$ mkdocs serve -a 127.0.0.1:8765  (then, from another shell:)
+$ curl -s -o /dev/null -w "%{http_code}\n" http://127.0.0.1:8765/
+302
+$ curl -s http://127.0.0.1:8765/compost/ | grep -o "<title>[^<]*</title>"
+<title>Maple Street Community Garden Handbook</title>
+$ curl -s http://127.0.0.1:8765/search/search_index.json | head -c 120
+<!doctype html><html lang=en class=no-js> <head><meta charset=utf-8><meta name=viewport content="width=device-width,init
+
+The site_url path (/garden-handbook/) is where the dev
+server mounts the site. At the mounted path everything
+answers properly:
+
+$ curl -s -o /dev/null -w "%{http_code}\n" http://127.0.0.1:8765/garden-handbook/
+200
+$ curl -s http://127.0.0.1:8765/garden-handbook/compost/ | grep -o "<title>[^<]*</title>"
+<title>Compost - Maple Street Community Garden Handbook</title>
+$ curl -s http://127.0.0.1:8765/garden-handbook/search/search_index.json | head -c 120
+{"config":{"lang":["en"],"separator":"[\\s\\-]+","pipeline":["stopWordFilter"],"fields":{"title":{"boost":1000.0},"text"
+$ curl -s -o /dev/null -w "%{http_code} -> %{redirect_url}\n" http://127.0.0.1:8765/
+302 -> http://127.0.0.1:8765/garden-handbook/
